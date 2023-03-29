@@ -1,0 +1,30 @@
+.figura {
+    margin: 50px;
+    background-color: rgb(7, 173, 157);
+    width: 700px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.userName{
+    padding: 30px;
+    height: 10px;
+    border-radius: 10%;
+    border: none;
+    font-size: 30px;
+    color: rgb(192, 189, 189);
+}
+.button {
+    background-color: turquoise;
+    height: 100px;
+    width: 80%;
+    border-radius: 5%;
+    border: none;
+    font-size: 30px;
+    color: rgb(62, 87, 228);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}

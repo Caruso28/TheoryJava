@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="principal"> Hola Courseit</h1>
+    <p>Esto es un parrafo de prueba</p>
+    <script>
+        const prueba = document.getElementById ("principal")
+        prueba.innerHTML = "Hola curso de Javascript";
+        console.log(prueba);
+    </script>
+        <!-- Seleccionando elementos en el DOM -->
+    <nav>
+        <ul>
+         <li>Primero</li>   
+         <li>Segundo</li>   
+         <li>Tercero</li>   
+        </ul>
+
+        <span id="result"></span>
+    </nav>
+    <div>
+        <p id="firstp" class="p">Soy el primer parrafo</p>
+        <p class="p">Soy el segundo parrafo</p>
+    </div>
+    <p>Soy el tercer parrafo</p>
+    <script>
+        const liLength = document.getElementsByTagName("li").length
+        const result = document.getElementById("result");
+        result.innerHTML = 'Actualmente tenemos ${liLength} lis';
+    </script>
+        <!-- Classlist -->
+<style>
+    .container {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: 1s all;
+    }
+    .bigBox {
+        width: 400px;
+        transition: 1s all;
+    }
+</style>
+<div id="container" class="container test"></div>
+    <!-- Eventos onclick -->
+<button onclick="togglebigBox('add')">Agregar clase</button>
+<button onclick="togglebigBox('remove')">Remover clase</button>
+<script>
+    const container = document.getElementById("container");
+
+    function togglebigBox(action) {
+        if (action == "add") {
+            container.classList.add("bigBox");
+        } else if (action == "remove") {
+            container.classList.remove("bigBox");
+        } else {
+            console.log("Accion Invalida");
+        }
+    }
+</script>
+    <!-- Eventos Teclado -->
+<input id="test" type="text" onchange="handlechange()"/>
+<span id="error"></span>
+<script>
+    function handlechange() {
+        const input = document.getElementById('test');
+        const value = input.value
+        const errorSpan = document.getElementById ('error');
+        if (value.length == 0) {
+            errorSpan.innerHTML = "El input esta vacio"
+        } else {
+            errorSpan.innerHTML = "";
+        }
+    }
+</script>
+<br>
+<input id="test2" type="text" onkeyup="handlechange(event)"/>
+<script>
+        function handlechange(e) {
+            console.log(e.target.value);
+        }
+</script>
+<br>
+<input id="test3" type="text" />
+<p id="mirror"></p>
+<button onclick="showValue()">Mostrar Valor</button>
+<script>
+    function showValue() {
+        const input = document.getElementById("test3");
+        const mirror = document.getElementById("mirror");
+        mirror.innerHTML = input.value;
+    }
+</script>
+<br>
+<input id="test4" type="text" onkeyup="handleChange(event)"/>
+<p id="mirror"></p>
+<script>
+function handleChange(e) {
+        const value = e.target.value;
+        const mirror = document.getElementById("mirror");
+        mirror.innerHTML = value
+    }
+</script>
+    <!-- Como agregar y eliminar elementos del DOM -->
+<ul id="list"></ul>
+<script>
+    function addItem(value) {
+    const list = document.getElementById("list");
+    const item = document.createElement("li");
+    const text = document.createTextNode(value);
+    item.appendChild(text);
+    list.appendChild(item);
+    }
+    function addItemHTML(value) {
+        const list = document.getElementById("list");
+        const oldHTML = list.innerHTML;
+        list.innerHTML = '${oldHTML} <li>{value}>';
+    }
+</script>
+<br>
+<input id="input-task" type="text"/>
+<button onclick="addItem()">Agregar</button>
+    <ul id="list"></ul>
+    <p id="erase">Borrame</p>
+    <script>
+        function deleteElem() {
+        const elem = document.getElementById("erase");
+        elem.remove()
+        }
+        function addItem() {
+        const taskValue = document.getElementById("input-task").value;
+        addElementToDOM("li", taskValue, "list");
+        document.getElementById("input-task").value = "";
+        }
+        function  addElementToDOM(type, content, parentId) {
+            const parent = document.getElementById(parentId);
+            const elem = document.createElement(type);
+            const text = document.createTextNode(content);
+            elem.appendChild(text);
+            parent.appendChild(elem);
+        }
+    </script>
+        <!-- Bucles -->
+    <script>
+        const personas = ["Juani", "Guido", "Nico"]
+        for (let i = 0; i < personas.length; i++) {
+        console.log(personas[i])
+        }
+        const arr = [1, 23, 10, 3, 5, 9, 100, 14]
+        let mayorNumero = [0]
+        for (let i = 0; i < arr.length; i++) {
+        const numeroActual = arr[i]
+        if (numeroActual > mayorNumero) {
+            mayorNumero = numeroActual
+        }
+        }
+        console.log(mayorNumero)
+        let i = 1;
+        while(i <= 10) {
+        console.log(i);
+        i = i + 1
+        }
+        const personas1 = ["Arturo", "Guido", "Tony"]
+        personas1.map((personas1) => [
+        console.log(personas1)
+        ]);
+        const arr1 = [1, 2, 3];
+        const double = arr1.map((num) => {
+            return num * 2
+        })
+        console.log(double);
+    </script>
+<!-- Fetch -->
+<input type="text" id="user">
+<button onclick="fetchData()">Buscar</button>
+<div>
+    <label>Nombre:</label><span id="name"></span><br>
+    <label>Empresa:</label><span id="company"></span><br>
+    <label>Bio:</label><span id="bio"></span><br>
+</div>
+<script>
+    async function fetchData() {
+    const inputValue = document.getElementById("user").value;
+    const data = await fetch('https://api.github.com/users/S{inputValue}')
+    const json = await data.json();
+
+    console.log(data);
+    if (data.status == 200) {
+    document.getElementById("name").innerText = json.name;
+    document.getElementById("company").innerText = json.company;
+    document.getElementById ("bio").innerText = json.bio;
+    }
+    document.getElementById ("status").innerText = data.status;
+    }
+</script>
+</body>
+</html>

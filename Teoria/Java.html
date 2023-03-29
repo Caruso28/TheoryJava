@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>Usuario - Páginalpersonal</title>
+</head>
+<body>
+    <script>
+        //"Variables"
+        const nombre = "Guido";
+        let edad = 37;
+        console.log("Vieja edad " + edad);
+        edad = edad + 1
+        console.log("Mi nombre es " + nombre + " mi edad es " + edad);
+        //"Strings"
+        const apellido = "Rimati";
+        const hobbies = "programar";
+        console.log(`Hola, mi nombre es ${nombre} ${apellido}. Tengo ${edad} años y me gusta ${hobbies}`)
+        //"Numbers"
+        const kids = 3;
+        const candies = 10;
+        const candiesPerKid = Math.floor(candies / kids);
+        const candiesPerParent = (candies % kids);
+        console.log(`Cada chico recibe ${candiesPerKid}`);
+        console.log(`El padre o madre recibe ${candiesPerParent}`);
+        //Math.round(X)
+        //Math.floor(X)
+        //Math.ceil(X)
+        //Math.random(X)
+        const a = 10;
+        const b = "20";
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(a + b);
+        console.log(a * b);
+        //"Objects"
+        const person = {
+            name: "Guido",
+            surname: "Rimati",
+            age: 37
+        }
+        console.log(person.name);
+        //"Arrays"
+        const person1 = {
+            name: "Guido",
+            surname: "Rimati",
+        }
+        const person2 = {
+            name: "Mariela",
+            surname: "Milo",
+        }
+        const students = [person1, person2]
+        console.log(students)
+        console.log(students[0])
+
+        students.push({
+            name: "Arturo",
+            surname: "Perro",
+        })
+        console.log(students)
+        const numbers = [1, 2, 3, 4, 5]
+        console.log(numbers)
+        //"Booleanos y operadores de igualdad"
+        const isSunny = false;
+        let age = 19;
+        let olderThan18 = age >= 18;
+        console.log(olderThan18);
+        age = 10;
+        olderThan18 = age >= 18;
+        console.log(olderThan18);
+
+        const ages = 18;
+        const is18 = ages == 18;
+        console.log(is18);
+        //""1" == 1 -> Verdadero"
+        //""1" === 1 -> Falso"
+
+        //"Operadores logicos y Condicionaes"
+        const isRaining = true;
+        if (isRaining == true) {
+            console.log("Agarro un paraguas");
+        } else {
+            console.log("No agarro nada");
+        } 
+
+        const agee = 12
+        const havePermission = true;
+
+        if (agee >= 65) {
+            console.log("Soy jubilado");
+        }
+        else if  ((agee >= 18 && age < 65) || havePermission == true) {
+            console.log ("Soy mayor de edad");
+        }
+        else {
+            console.log("Soy menor de edad")
+        }
+
+        const personn = {
+        namee: "Guido",
+        surnamee: "Rimati",
+        }
+        const {namee, surnamee} = personn
+        if (namee == "Guido" && surnamee == "Rimati") {
+            console.log("Podes acceder");
+        }
+        else {
+            console.log("Acceso Denegado");
+        }
+
+        //"Funciones"
+        const edad1 = 10
+        const edad2 = 20
+        const edad3 = 18
+        const edad4 = 1
+        const edad5 = 58
+
+        function checkage(age) {
+        if (age >= 18) {
+        console.log("Puede entrar")
+        }
+        else {
+        console.log("No puede entrar")    
+        }
+        }
+        checkage (edad1);
+        checkage (edad2);
+        checkage (edad3);
+        checkage (edad4);
+        checkage (edad5);
+
+        let num1 = 10
+        let num2 = 20
+        Math.max(num1, num2)
+
+        Math.random
+
+        const objetos=
+        objetos.push("pepsi") 
+            </script>
+</body>

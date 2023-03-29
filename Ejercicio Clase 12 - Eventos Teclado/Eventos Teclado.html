@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Eventos Teclado.css">
+</head>
+<body>
+    <div class="figura">
+        <input id="test" type="text" class="userName" placeholder="type username..." onkeyup="ingreso(event)"/>
+        <br>
+        <button class="button" onclick="inputUser"><b>Buscar usuario</b></button>
+    </div>
+<script>
+    function ingreso(e) {
+        console.log(e.target.value);
+    }
+    function inputUser() {
+        const input = document.getElementById(test);
+        console.log(input.value);
+    }
+</script>
+</body>
+</html>

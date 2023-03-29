@@ -1,0 +1,56 @@
+body {
+    margin: 50px;
+    padding: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.tarjeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+.info {
+    height: 500px;
+    width: 600px;
+    border: 30px solid rgb(231, 228, 228);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+.linea {
+    border-bottom: 3px solid grey;
+    height: 1px;
+}
+.foto {
+    padding: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+.descripcion {
+    color: black;
+    display: flex;
+    justify-content: center;
+}   
+.usuario {
+    color: gray;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+button {
+    padding: 50px;
+    width: 605px;
+    height: 125px;
+    color: white;
+    background-color:turquoise;
+    font-size: 25px;
+    text-align: center;
+    border-color:turquoise;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    cursor: pointer;
+    position: relative;
+}
+button :hover {
+    background-color: aquamarine;
+}

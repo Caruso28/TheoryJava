@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>Usuario - Páginalpersonal</title>
+</head>
+<body>
+    <script>
+        function suma()  {
+        let number1 = 3
+        let number2 = 5
+        console.log(number1 + number2)
+        }
+        suma();
+
+        const numbertest1 = 6
+        const numbertest2 = 7
+
+        function parOImpar(numero) {
+        if (numero % 2 == 0) {
+            console.log("Par");
+        } else {
+            console.log("Impar");
+        }
+        }
+        parOImpar(numbertest1);
+        parOImpar(numbertest2);
+
+        function multiplo(numero) {
+        if (numero % 3 == 0) {
+            console.log("Multiplo de 3");
+        } else if (numero % 5 == 0) {
+            console.log("Multiplo de 5");
+        } else {
+            console.log("No es Multiplo de ninguno");
+        }
+        }
+        multiplo(numbertest1);
+        multiplo(numbertest2);
+
+        const mes1 = "enero";
+        const mes2 = "febrero";
+
+        function diasDelMes(mes) {
+            if (mes == "enero" || mes == "marzo" || mes == "mayo" || mes == "julio" || mes == "agosto" || mes == "octubre" || mes == "diciembre") {
+            console.log("31");
+            }
+            else if (mes == "abril" || mes == "junio" || mes == "septiembre" || mes == "noviembre") {
+            console.log("30");
+            }
+            else 
+            console.log("28")
+            }
+        diasDelMes(mes1);
+        diasDelMes(mes2);
+    </script>
+</body>
