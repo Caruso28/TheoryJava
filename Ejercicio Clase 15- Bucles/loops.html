@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const personas = ["Guido", "Arturo"]
+        for (let i = 0; i< personas.length; i++) {
+            console.log(personas[i]);
+        }
+
+        const arr [1, 23, 10, 3, 5, 9, 14];
+        let mayorNumero = arr[0]
+
+        for (let i = 0; i< arr.length; i++) {
+            const numeroActual = arr[i]
+            if (numeroActual > mayorNumero) {
+                mayorNumero = numeroActual
+            }
+        }
+        console.log(mayorNumero)
+
+        const people = ["Mila", "Toni"]
+        let i = 0
+        while (i < people.length) {
+            console.log(people[i]);
+            i = i +1;
+        }
+
+        const personass = ["Guido", "Arturo", "Mila", "Tony"]
+        personass.map((persona) => {
+            console.log(persona);
+        })
+
+        const arrays = [1, 23, 10, 3, 5, 9, 14];
+        const double = arrays.map((num) => {
+            return num*2
+        });
+            console.log(double);
+    </script>
+</body>
+</html>

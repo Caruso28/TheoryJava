@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 400px;
+    flex-direction: column;
 }
 .info {
     height: 500px;

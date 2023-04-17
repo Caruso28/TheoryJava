@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="user">
+    <button onclick="fetchData()">Buscar</button>
+    <div>
+        <label>Nombre: </label><span id="name"></span><br>
+        <label>Empresa: </label><span id="company"></span><br>
+        <label>Bio: </label><span id="bio"></span><br>
+        <label>Status: </label><span id="status"></span> 
+    </div>
+    <script>
+        async function fetchData(){ //async porque es asincronica
+            const inputValue = document.getElementById("user").value;
+            const data = await fetch(`https://api.github.com/users/${inputValue}`); //await como respuesta a async
+            const json = await data.json(); //Paso de string de datos a json
+
+            console.log(data); //aca es antes del json
+
+            if (data.status == 200) {
+                document.getElementById("name").innerText = json.name; //innerText modificar texto interno sin meter HTML
+                document.getElementById("company").innerText = json.company;
+                document.getElementById("bio").innerText = json.bio;
+            }
+            
+            document.getElementById("status").innerText = data.status
+        }
+    </script>
+</body>
+</html>

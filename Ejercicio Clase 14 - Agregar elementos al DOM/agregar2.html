@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputTask" type="text" />
+    <button onclick="addItem()">Agregar</button>
+    <ul id="list"></ul>
+
+    <script>
+        function addItem() {
+            const taskValue = document.getElementById("inputTask").value;
+            // va .value y no innerHTML porque es un input
+            addElementToDOM = ("li", taskValue, "list");
+            document.getElementById("inputTask").value = "";
+            //esto ultimo es para que el casillero quede vacio al clickear
+        }
+
+        function addElementToDOM(tye, content, parentId) {
+            const parent = document.getElementById(parentID);
+            const element = document.createElement(type);
+            const text = document.createTextNode(content)
+
+            element.appendChild(text);
+            parent.appendChild(element);
+        }
+    </script>
+</body>
+</html>

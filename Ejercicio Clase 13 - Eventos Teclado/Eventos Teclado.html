@@ -9,17 +9,20 @@
 </head>
 <body>
     <div class="figura">
-        <input id="test" type="text" class="userName" placeholder="type username..." onkeyup="ingreso(event)"/>
-        <br>
+        <input id="test" type="text" onkeyup="handleChange(event)"/>
+        <p id="mirror"></p>
         <button class="button" onclick="inputUser"><b>Buscar usuario</b></button>
     </div>
 <script>
-    function ingreso(e) {
-        console.log(e.target.value);
-    }
+    function handleChange(e) {
+        const value = e.target.value
+        const mirror = document.getElementById("mirror");
+        mirror.innerHTML = value
+}
+
     function inputUser() {
-        const input = document.getElementById(test);
-        console.log(input.value);
+            const input = document.getElementById("test");
+            console.log(input.value);
     }
 </script>
 </body>
